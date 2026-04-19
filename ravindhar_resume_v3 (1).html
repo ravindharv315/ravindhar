@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ravindhar V – Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --ink:#1a1612;--ink2:#4a4540;--ink3:#8a7f78;
+  --paper:#f5f1ec;--paper2:#ede8e1;
+  --accent:#b94a2c;--accent2:#d4703a;
+  --border:rgba(26,22,18,0.13);
+  --green:#2d6a2d;--green-bg:#edf7ed;--green-bd:#b8ddb8;
+  --font-serif:'Playfair Display',Georgia,serif;
+  --font-sans:'Jost',sans-serif;
+}
+body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);min-height:100vh;}
+
+/* HEADER */
+header{background:var(--ink);color:var(--paper);padding:3rem 2.5rem 2.5rem;position:relative;overflow:hidden;}
+header::before{content:'';position:absolute;top:-60px;right:-60px;width:260px;height:260px;border-radius:50%;border:40px solid rgba(185,74,44,0.18);}
+header::after{content:'';position:absolute;bottom:-40px;left:120px;width:180px;height:180px;border-radius:50%;border:28px solid rgba(185,74,44,0.10);}
+.header-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;}
+.name-block h1{font-family:var(--font-serif);font-size:clamp(2.2rem,4vw,3.4rem);font-weight:600;color:#fff;line-height:1.05;}
+.name-block h1 em{font-style:italic;color:var(--accent2);}
+.tagline{font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(245,241,236,0.5);margin-top:8px;font-weight:300;}
+.contact-strip{display:flex;flex-wrap:wrap;gap:6px 20px;margin-top:1.2rem;}
+.contact-strip a,.contact-strip span{font-size:0.8rem;color:rgba(245,241,236,0.72);text-decoration:none;display:flex;align-items:center;gap:5px;}
+.contact-strip a:hover{color:var(--accent2);}
+.ci{width:13px;height:13px;fill:var(--accent);flex-shrink:0;}
+
+/* LAYOUT */
+.page{max-width:1200px;margin:0 auto;padding:2rem 1.5rem;display:grid;grid-template-columns:1fr 340px;gap:2rem;align-items:start;}
+.main{display:flex;flex-direction:column;gap:1.8rem;}
+.sidebar{display:flex;flex-direction:column;gap:1.5rem;}
+
+/* SECTION HEAD */
+.sec-head{font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:1rem;padding-bottom:7px;border-bottom:1.5px solid var(--accent);display:flex;align-items:center;justify-content:space-between;}
+.sec-head-left{display:flex;align-items:center;gap:8px;}
+.sec-head svg.si{width:13px;height:13px;fill:var(--accent);}
+.btn-group{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.add-btn{font-family:var(--font-sans);font-size:0.72rem;padding:4px 12px;border-radius:99px;border:1px dashed var(--accent);background:transparent;color:var(--accent);cursor:pointer;font-weight:500;display:flex;align-items:center;gap:4px;transition:all 0.15s;white-space:nowrap;}
+.add-btn:hover{background:var(--accent);color:#fff;}
+
+/* ABOUT */
+.about-wrapper{position:relative;}
+.about-text{font-size:0.94rem;line-height:1.8;color:var(--ink2);font-weight:300;border:1.5px solid transparent;border-radius:8px;padding:10px 12px;transition:border-color 0.2s,background 0.2s;outline:none;min-height:60px;}
+.about-text[contenteditable="true"]:hover{border-color:var(--border);background:rgba(255,255,255,0.5);}
+.about-text[contenteditable="true"]:focus{border-color:var(--accent);background:#fff;}
+.about-edit-hint{font-size:0.72rem;color:var(--ink3);margin-top:5px;display:flex;align-items:center;gap:5px;padding-left:12px;}
+.about-edit-hint svg{width:11px;height:11px;fill:var(--ink3);}
+
+/* JOB */
+.job{margin-bottom:1.4rem;padding-bottom:1.4rem;border-bottom:0.5px solid var(--border);position:relative;}
+.job:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.job-header{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;}
+.job-title{font-family:var(--font-serif);font-size:1rem;font-weight:600;}
+.job-date{font-size:0.73rem;background:var(--paper2);border:1px solid var(--border);padding:3px 10px;border-radius:99px;color:var(--ink3);white-space:nowrap;flex-shrink:0;}
+.job-company{font-size:0.8rem;color:var(--accent);font-weight:500;margin:3px 0;letter-spacing:0.03em;}
+.job-bullets{list-style:none;margin-top:7px;display:flex;flex-direction:column;gap:4px;}
+.job-bullets li{font-size:0.86rem;color:var(--ink2);font-weight:300;line-height:1.6;padding-left:14px;position:relative;}
+.job-bullets li::before{content:'–';position:absolute;left:0;color:var(--accent);}
+.job-actions{display:flex;gap:6px;margin-top:10px;padding-top:8px;border-top:0.5px dashed var(--border);}
+.job-btn{font-family:var(--font-sans);font-size:0.72rem;padding:4px 12px;border-radius:6px;cursor:pointer;font-weight:500;transition:all 0.15s;display:inline-flex;align-items:center;gap:4px;border:1px solid var(--border);background:#fff;color:var(--ink2);}
+.job-btn:hover{border-color:var(--accent);color:var(--accent);}
+.job-btn.danger{color:#c0392b;border-color:#e8b4b0;}
+.job-btn.danger:hover{background:#fdf0ef;}
+.job-btn svg{width:11px;height:11px;fill:currentColor;}
+
+/* EDU */
+.edu-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:0.5px solid var(--border);position:relative;}
+.edu-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.edu-deg{font-family:var(--font-serif);font-size:1rem;font-weight:600;}
+.edu-school{font-size:0.8rem;color:var(--accent);margin:2px 0;font-weight:500;}
+.edu-meta{font-size:0.78rem;color:var(--ink3);}
+
+/* SKILLS */
+.skills-groups{display:flex;flex-direction:column;gap:10px;}
+.skill-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.skill-cat{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);min-width:60px;font-weight:500;}
+.skill-pills{display:flex;flex-wrap:wrap;gap:5px;}
+.pill{font-size:0.76rem;padding:3px 11px;border:1px solid var(--border);border-radius:99px;color:var(--ink2);background:var(--paper2);font-weight:400;}
+.pill.strong{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+
+/* ACHIEVEMENTS */
+.ach-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.ach-list li{font-size:0.86rem;color:var(--ink2);font-weight:300;line-height:1.5;padding-left:18px;position:relative;}
+.ach-list li::before{content:'★';position:absolute;left:0;font-size:0.62rem;color:var(--accent);top:3px;}
+
+/* SIDEBAR CARD */
+.sidebar-card{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+.sidebar-card-head{background:var(--ink);color:var(--paper);font-size:0.67rem;letter-spacing:0.16em;text-transform:uppercase;font-weight:500;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;}
+.sidebar-card-head svg{width:13px;height:13px;fill:var(--accent2);}
+.sidebar-card-head-left{display:flex;align-items:center;gap:8px;}
+.sidebar-add-btn{font-family:var(--font-sans);font-size:0.68rem;padding:3px 10px;border-radius:99px;border:1px dashed rgba(255,255,255,0.4);background:transparent;color:rgba(255,255,255,0.8);cursor:pointer;transition:all 0.15s;}
+.sidebar-add-btn:hover{background:rgba(255,255,255,0.15);}
+.sidebar-card-body{padding:14px 16px;}
+
+/* PROJECT FILE */
+.proj-file{border:1px solid var(--border);border-radius:8px;padding:11px 13px;margin-bottom:9px;background:var(--paper);transition:border-color 0.2s;position:relative;}
+.proj-file:last-child{margin-bottom:0;}
+.proj-file:hover{border-color:var(--accent);}
+.proj-file-name{font-size:0.87rem;font-weight:500;color:var(--ink);margin-bottom:3px;}
+.proj-file-desc{font-size:0.77rem;color:var(--ink3);line-height:1.5;margin-bottom:7px;}
+.file-badge{display:none;align-items:center;gap:5px;font-size:0.72rem;padding:3px 9px;border-radius:99px;background:var(--green-bg);color:var(--green);border:1px solid var(--green-bd);margin-bottom:6px;}
+.proj-file-actions{display:flex;gap:6px;flex-wrap:wrap;}
+.btn-attach{font-family:var(--font-sans);font-size:0.74rem;padding:5px 11px;border-radius:6px;cursor:pointer;font-weight:500;transition:all 0.15s;display:inline-flex;align-items:center;gap:5px;border:1px solid var(--border);background:#fff;color:var(--ink2);}
+.btn-attach:hover{border-color:var(--accent);color:var(--accent);}
+.btn-attach.primary{background:var(--accent);color:#fff;border-color:var(--accent);}
+.btn-attach.primary:hover{background:#a03820;}
+.btn-attach.danger{color:#c0392b;border-color:#e8b4b0;}
+.btn-attach.danger:hover{background:#fdf0ef;}
+input[type="file"]{display:none;}
+
+/* CERT */
+.cert-item{padding:8px 0;border-bottom:0.5px solid var(--border);font-size:0.84rem;color:var(--ink2);line-height:1.5;display:flex;justify-content:space-between;align-items:flex-start;gap:8px;}
+.cert-item:last-child{border-bottom:none;}
+.cert-tag{display:inline-block;font-size:0.67rem;padding:2px 8px;background:var(--paper2);border-radius:4px;color:var(--ink3);margin-top:3px;}
+
+/* LANG */
+.lang-row{display:flex;gap:7px;flex-wrap:wrap;padding:4px 0;}
+.lang-chip{font-size:0.81rem;padding:5px 14px;border-radius:99px;border:1px solid var(--border);color:var(--ink2);background:var(--paper2);display:flex;align-items:center;gap:6px;}
+
+/* CUSTOM */
+.custom-item{padding:8px 0;border-bottom:0.5px solid var(--border);font-size:0.84rem;color:var(--ink2);display:flex;justify-content:space-between;align-items:flex-start;gap:8px;}
+.custom-item:last-child{border-bottom:none;}
+
+/* NEW SECTION */
+.new-section-box{border:1.5px dashed var(--border);border-radius:12px;padding:1.2rem;text-align:center;cursor:pointer;transition:all 0.2s;background:transparent;}
+.new-section-box:hover{border-color:var(--accent);background:#fff8f6;}
+.new-section-box p{font-size:0.82rem;color:var(--ink3);margin-top:6px;}
+.new-section-box svg{fill:var(--ink3);width:22px;height:22px;}
+
+/* REMOVE */
+.remove-btn{font-size:0.7rem;padding:2px 8px;border-radius:4px;border:1px solid #e8b4b0;background:transparent;color:#c0392b;cursor:pointer;flex-shrink:0;font-family:var(--font-sans);}
+.remove-btn:hover{background:#fdf0ef;}
+
+/* ── MODAL ── */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:1000;align-items:center;justify-content:center;}
+.modal-overlay.open{display:flex;}
+.modal{background:#fff;border-radius:14px;padding:1.8rem;width:min(540px,94vw);max-height:90vh;overflow-y:auto;position:relative;}
+.modal h3{font-family:var(--font-serif);font-size:1.25rem;margin-bottom:1.2rem;color:var(--ink);}
+.modal label{display:block;font-size:0.75rem;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink3);margin:12px 0 5px;font-weight:500;}
+.modal label:first-of-type{margin-top:0;}
+.modal input[type="text"],.modal textarea,.modal select{width:100%;border:1px solid var(--border);border-radius:8px;padding:9px 12px;font-family:var(--font-sans);font-size:0.9rem;color:var(--ink);background:var(--paper);outline:none;transition:border-color 0.2s;}
+.modal input[type="text"]:focus,.modal textarea:focus{border-color:var(--accent);}
+.modal textarea{resize:vertical;min-height:90px;line-height:1.6;}
+.modal-hint{font-size:0.76rem;color:var(--ink3);margin-top:4px;}
+.modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:1.4rem;}
+.modal-actions button{font-family:var(--font-sans);font-size:0.84rem;padding:8px 20px;border-radius:8px;cursor:pointer;font-weight:500;transition:all 0.15s;}
+.btn-cancel{background:transparent;border:1px solid var(--border);color:var(--ink3);}
+.btn-cancel:hover{border-color:var(--ink3);}
+.btn-save{background:var(--accent);color:#fff;border:1px solid var(--accent);}
+.btn-save:hover{background:#a03820;}
+
+/* EDIT HIGHLIGHT */
+[contenteditable="true"]{outline:none;}
+.editable-field{border:1.5px solid transparent;border-radius:6px;padding:3px 7px;transition:border-color 0.18s,background 0.18s;cursor:text;}
+.editable-field:hover{border-color:rgba(185,74,44,0.35);background:rgba(255,255,255,0.6);}
+.editable-field:focus{border-color:var(--accent);background:#fff;outline:none;}
+
+@media(max-width:780px){.page{grid-template-columns:1fr;}header{padding:2rem 1.2rem;}}
+</style>
+</head>
+<body>
+
+<!-- ══ MODALS ══ -->
+
+<!-- EDIT EXPERIENCE -->
+<div class="modal-overlay" id="modal-edit-exp">
+  <div class="modal">
+    <h3 id="edit-exp-heading">Edit Experience</h3>
+    <label>Job Title</label>
+    <input type="text" id="ee-title"/>
+    <label>Company &amp; Location</label>
+    <input type="text" id="ee-company"/>
+    <label>Duration</label>
+    <input type="text" id="ee-date" placeholder="e.g. Jun 2026 – Present"/>
+    <label>Bullet Points <span class="modal-hint">(one per line)</span></label>
+    <textarea id="ee-bullets" rows="7"></textarea>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeModal('modal-edit-exp')">Cancel</button>
+      <button class="btn-save" onclick="applyEditExp()">Save Changes</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADD EXPERIENCE -->
+<div class="modal-overlay" id="modal-exp">
+  <div class="modal">
+    <h3>Add Experience</h3>
+    <label>Job Title</label><input type="text" id="exp-title" placeholder="e.g. Design Engineer"/>
+    <label>Company &amp; Location</label><input type="text" id="exp-company" placeholder="e.g. L&T, Coimbatore"/>
+    <label>Duration</label><input type="text" id="exp-date" placeholder="e.g. Jun 2026 – Present"/>
+    <label>Key Points <span class="modal-hint">(one per line)</span></label>
+    <textarea id="exp-bullets" placeholder="Designed components for tire presses&#10;Created 3D models using Creo"></textarea>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeModal('modal-exp')">Cancel</button>
+      <button class="btn-save" onclick="saveExp()">Add</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADD EDUCATION -->
+<div class="modal-overlay" id="modal-edu">
+  <div class="modal">
+    <h3>Add Education</h3>
+    <label>Degree / Qualification</label><input type="text" id="edu-deg" placeholder="e.g. B.E. Mechanical Engineering"/>
+    <label>Institution</label><input type="text" id="edu-school" placeholder="e.g. VCET, Thindal, TN"/>
+    <label>Year &amp; Score</label><input type="text" id="edu-meta" placeholder="e.g. 2021–2025 · CGPA: 8.78"/>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeModal('modal-edu')">Cancel</button>
+      <button class="btn-save" onclick="saveEdu()">Add</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADD SKILL -->
+<div class="modal-overlay" id="modal-skill">
+  <div class="modal">
+    <h3>Add Skill</h3>
+    <label>Category</label><input type="text" id="skill-cat" placeholder="e.g. Programming"/>
+    <label>Skills <span class="modal-hint">(comma separated)</span></label><input type="text" id="skill-items" placeholder="e.g. Python, MATLAB, C++"/>
+    <label>Style</label>
+    <select id="skill-style"><option value="">Normal</option><option value="strong">Bold (highlight)</option></select>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeModal('modal-skill')">Cancel</button>
+      <button class="btn-save" onclick="saveSkill()">Add</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADD ACHIEVEMENT -->
+<div class="modal-overlay" id="modal-ach">
+  <div class="modal">
+    <h3>Add Achievement</h3>
+    <label>Achievement</label>
+    <textarea id="ach-text" placeholder="e.g. 1st Place – National Design Competition 2025"></textarea>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeModal('modal-ach')">Cancel</button>
+      <button class="btn-save" onclick="saveAch()">Add</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADD CERTIFICATION -->
+<div class="modal-overlay" id="modal-cert">
+  <div class="modal">
+    <h3>Add Certification</h3>
+    <label>Certification Name</label><input type="text" id="cert-name" placeholder="e.g. Six Sigma Green Belt"/>
+    <label>Issuer / Platform</label><input type="text" id="cert-issuer" placeholder="e.g. IIT NPTEL, Coursera"/>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeModal('modal-cert')">Cancel</button>
+      <button class="btn-save" onclick="saveCert()">Add</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADD LANGUAGE -->
+<div class="modal-overlay" id="modal-lang">
+  <div class="modal">
+    <h3>Add Language</h3>
+    <label>Language</label><input type="text" id="lang-name" placeholder="e.g. Hindi"/>
+    <label>Proficiency <span class="modal-hint">(optional)</span></label><input type="text" id="lang-level" placeholder="e.g. Native, Conversational"/>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeModal('modal-lang')">Cancel</button>
+      <button class="btn-save" onclick="saveLang()">Add</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADD PROJECT -->
+<div class="modal-overlay" id="modal-proj">
+  <div class="modal">
+    <h3>Add Project</h3>
+    <label>Project Title</label><input type="text" id="proj-title" placeholder="e.g. Robotic Arm Design"/>
+    <label>Description</label><textarea id="proj-desc" placeholder="Brief description..."></textarea>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeModal('modal-proj')">Cancel</button>
+      <button class="btn-save" onclick="saveProj()">Add</button>
+    </div>
+  </div>
+</div>
+
+<!-- CUSTOM SECTION -->
+<div class="modal-overlay" id="modal-custom-section">
+  <div class="modal">
+    <h3>Add Custom Section</h3>
+    <label>Section Title</label><input type="text" id="custom-sec-title" placeholder="e.g. Publications, Volunteering"/>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeModal('modal-custom-section')">Cancel</button>
+      <button class="btn-save" onclick="saveCustomSection()">Create</button>
+    </div>
+  </div>
+</div>
+
+<!-- CUSTOM ITEM -->
+<div class="modal-overlay" id="modal-custom-item">
+  <div class="modal">
+    <h3 id="custom-item-title">Add Item</h3>
+    <label>Title / Name</label><input type="text" id="custom-item-name" placeholder="Item title"/>
+    <label>Detail <span class="modal-hint">(optional)</span></label><input type="text" id="custom-item-detail" placeholder="Additional info"/>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeModal('modal-custom-item')">Cancel</button>
+      <button class="btn-save" onclick="saveCustomItem()">Add</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ HEADER ══ -->
+<header>
+  <div class="header-inner">
+    <div>
+      <div class="name-block">
+        <h1>Ravindhar <em>V</em></h1>
+        <p class="tagline">Mechanical Design Engineer &nbsp;·&nbsp; Coimbatore, TN</p>
+      </div>
+      <div class="contact-strip">
+        <a href="mailto:ravindhar315@gmail.com">
+          <svg class="ci" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          ravindhar315@gmail.com
+        </a>
+        <a href="https://linkedin.com/in/ravindhar-v-30157324a" target="_blank">
+          <svg class="ci" viewBox="0 0 24 24"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          linkedin.com/in/ravindhar-v
+        </a>
+        <span>
+          <svg class="ci" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          6383770339
+        </span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="page">
+
+<!-- ══ MAIN ══ -->
+<main class="main">
+
+  <!-- ABOUT -->
+  <div class="section">
+    <div class="sec-head">
+      <div class="sec-head-left">
+        <svg class="si" viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+        About
+      </div>
+    </div>
+    <div class="about-wrapper">
+      <p class="about-text" id="about-text" contenteditable="true">Mechanical Engineering graduate from VCET (CGPA 8.78) with a minor in AI, currently working as an Associate Design/Drafting Engineer at L&amp;T Product Development Centre, Coimbatore. Experienced in 3D/2D design of complex mechanical systems — from tire curing presses to composite bicycle frames — using PTC Creo, ZWCAD, GD&amp;T standards, and PLM tools like Windchill and Teamcenter. Passionate about precision engineering, sustainable design, and turning ideas into manufacturable products.</p>
+      <p class="about-edit-hint">
+        <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+        Click anywhere in the text above to edit
+      </p>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="section">
+    <div class="sec-head">
+      <div class="sec-head-left">
+        <svg class="si" viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10-2h4v2h-4V4zm10 16H4V8h16v12z"/></svg>
+        Experience
+      </div>
+      <button class="add-btn" onclick="openModal('modal-exp')">+ Add</button>
+    </div>
+    <div id="exp-list">
+
+      <!-- JOB 1 -->
+      <div class="job" data-jobid="j1">
+        <div class="job-header">
+          <div>
+            <div class="job-title" id="j1-title">Associate Design / Drafting Engineer</div>
+            <div class="job-company" id="j1-company">L&amp;T Product Development Centre, Coimbatore</div>
+          </div>
+          <span class="job-date" id="j1-date">Jun 2026 – Present</span>
+        </div>
+        <ul class="job-bullets" id="j1-bullets">
+          <li>Designed and developed components for tire curing presses (loader &amp; unloader, columns, PCI, conveyors, grippers) and tire building machines (1st &amp; 2nd stage TBM, servicers).</li>
+          <li>Created 2D drawings and 3D models using PTC Creo and ZWCAD.</li>
+          <li>Successfully delivered 5 major projects within deadlines.</li>
+          <li>Managed product data, revisions, and BOM using PTC Windchill and Siemens Teamcenter with SAP integration.</li>
+          <li>Collaborated with manufacturing teams for design feasibility, cost optimisation, and performance improvement.</li>
+          <li>Applied GD&amp;T standards and supported design modifications and troubleshooting.</li>
+        </ul>
+        <div class="job-actions">
+          <button class="job-btn" onclick="openEditExp('j1')">
+            <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+            Edit
+          </button>
+          <button class="job-btn danger" onclick="this.closest('.job').remove()">
+            <svg viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+            Remove
+          </button>
+        </div>
+      </div>
+
+      <!-- JOB 2 -->
+      <div class="job" data-jobid="j2">
+        <div class="job-header">
+          <div>
+            <div class="job-title" id="j2-title">Intern – Mechanical Design</div>
+            <div class="job-company" id="j2-company">L&amp;T Product Development Centre, Coimbatore</div>
+          </div>
+          <span class="job-date" id="j2-date">Jan 2025 – May 2025</span>
+        </div>
+        <ul class="job-bullets" id="j2-bullets">
+          <li>Prepared 2D drawings and basic 3D models using Creo and ZWCAD.</li>
+          <li>Assisted in developing concept designs for mechanical components.</li>
+          <li>Gained hands-on exposure to PLM tools: PTC Windchill and Siemens Teamcenter.</li>
+          <li>Applied basic GD&amp;T concepts in engineering drawings.</li>
+        </ul>
+        <div class="job-actions">
+          <button class="job-btn" onclick="openEditExp('j2')">
+            <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+            Edit
+          </button>
+          <button class="job-btn danger" onclick="this.closest('.job').remove()">
+            <svg viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+            Remove
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section">
+    <div class="sec-head">
+      <div class="sec-head-left">
+        <svg class="si" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        Technical Skills
+      </div>
+      <button class="add-btn" onclick="openModal('modal-skill')">+ Add</button>
+    </div>
+    <div class="skills-groups" id="skills-list">
+      <div class="skill-row" id="sr-CAD"><span class="skill-cat">CAD</span><div class="skill-pills"><span class="pill strong">PTC Creo</span><span class="pill strong">AutoCAD</span><span class="pill">ZWCAD</span></div></div>
+      <div class="skill-row" id="sr-PLM"><span class="skill-cat">PLM</span><div class="skill-pills"><span class="pill strong">Windchill</span><span class="pill strong">Teamcenter</span><span class="pill">Wrench Enterprise</span></div></div>
+      <div class="skill-row" id="sr-ERP"><span class="skill-cat">ERP</span><div class="skill-pills"><span class="pill">SAP</span></div></div>
+      <div class="skill-row" id="sr-Design"><span class="skill-cat">Design</span><div class="skill-pills"><span class="pill">GD&amp;T</span><span class="pill">BOM Management</span><span class="pill">Composite Layup</span><span class="pill">FSAM</span></div></div>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section">
+    <div class="sec-head">
+      <div class="sec-head-left">
+        <svg class="si" viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+        Education
+      </div>
+      <button class="add-btn" onclick="openModal('modal-edu')">+ Add</button>
+    </div>
+    <div id="edu-list">
+      <div class="edu-item">
+        <div class="edu-deg">B.E. Mechanical Engineering <span style="font-style:italic;font-weight:400;font-size:0.88rem">(Minor: AI)</span></div>
+        <div class="edu-school">Vellalar College of Engineering and Technology, Thindal, TN</div>
+        <div class="edu-meta">Aug 2021 – May 2025 &nbsp;·&nbsp; CGPA: 8.78 / 10.0</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-deg">HSC – Science Stream</div>
+        <div class="edu-school">Saraswathi Vidhyashram Matric Hr Sec School, Kavindapadi, TN</div>
+        <div class="edu-meta">June 2019 – May 2021 &nbsp;·&nbsp; 92.67%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACHIEVEMENTS -->
+  <div class="section">
+    <div class="sec-head">
+      <div class="sec-head-left">
+        <svg class="si" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        Achievements &amp; Leadership
+      </div>
+      <button class="add-btn" onclick="openModal('modal-ach')">+ Add</button>
+    </div>
+    <ul class="ach-list" id="ach-list">
+      <li>2nd Place – VCET Project Expo 2024 (Composite Bicycle) <button class="remove-btn" onclick="this.closest('li').remove()">✕</button></li>
+      <li>3rd Place (Best Design) – SAEISS BDC 2024 (₹6,000 prize) <button class="remove-btn" onclick="this.closest('li').remove()">✕</button></li>
+      <li>1st Place – Biomimicry Event (Tier 2 &amp; Tier 3) <button class="remove-btn" onclick="this.closest('li').remove()">✕</button></li>
+      <li>Company Leader – Led 100 cadets at NCC Camp (VCET); CQSM – Material control &amp; inventory management. <button class="remove-btn" onclick="this.closest('li').remove()">✕</button></li>
+      <li>Head of Events – FAME (10+ events, 200+ participants) <button class="remove-btn" onclick="this.closest('li').remove()">✕</button></li>
+      <li>Member – SAEISS, Rotaract Club <button class="remove-btn" onclick="this.closest('li').remove()">✕</button></li>
+    </ul>
+  </div>
+
+  <div id="main-custom-sections"></div>
+
+  <div class="new-section-box" onclick="openCustomSectionModal('main')">
+    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+    <p>Add a new section to main column</p>
+  </div>
+
+</main>
+
+<!-- ══ SIDEBAR ══ -->
+<aside class="sidebar">
+
+  <!-- PROJECT FILES -->
+  <div class="sidebar-card">
+    <div class="sidebar-card-head">
+      <div class="sidebar-card-head-left">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
+        Project Files
+      </div>
+      <button class="sidebar-add-btn" onclick="openModal('modal-proj')">+ Add</button>
+    </div>
+    <div class="sidebar-card-body">
+      <div id="proj-list">
+        <div class="proj-file">
+          <div class="proj-file-name">Friction Stir Additive Manufacturing</div>
+          <div class="proj-file-desc">Multi-layered Al 6061 structures — ~15–20% strength improvement &amp; defect-free builds. (2025)</div>
+          <div id="pf1-badge" class="file-badge"><svg style="width:12px;height:12px;fill:var(--green)" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span id="pf1-name"></span></div>
+          <div class="proj-file-actions">
+            <label class="btn-attach primary" for="fi1"><svg style="width:11px;height:11px;fill:#fff" viewBox="0 0 24 24"><path d="M16.5 6v11.5c0 2.21-1.79 4-4 4s-4-1.79-4-4V5c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5v10.5c0 .55-.45 1-1 1s-1-.45-1-1V6H10v9.5c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5V5c0-2.21-1.79-4-4-4S7 2.79 7 5v12.5c0 3.04 2.46 5.5 5.5 5.5s5.5-2.46 5.5-5.5V6h-1.5z"/></svg> Attach</label>
+            <input type="file" id="fi1" accept=".pdf,.docx,.pptx,.zip,.png,.jpg" onchange="attachFile(this,'pf1-badge','pf1-name')"/>
+            <button class="btn-attach danger" onclick="this.closest('.proj-file').remove()">Remove</button>
+          </div>
+        </div>
+        <div class="proj-file">
+          <div class="proj-file-name">Composite Bicycle Frame</div>
+          <div class="proj-file-desc">Double-frame glass fibre composite bicycle. 3rd SAEISS BDC 2024, 2nd VCET Expo 2024.</div>
+          <div id="pf2-badge" class="file-badge"><svg style="width:12px;height:12px;fill:var(--green)" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span id="pf2-name"></span></div>
+          <div class="proj-file-actions">
+            <label class="btn-attach primary" for="fi2"><svg style="width:11px;height:11px;fill:#fff" viewBox="0 0 24 24"><path d="M16.5 6v11.5c0 2.21-1.79 4-4 4s-4-1.79-4-4V5c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5v10.5c0 .55-.45 1-1 1s-1-.45-1-1V6H10v9.5c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5V5c0-2.21-1.79-4-4-4S7 2.79 7 5v12.5c0 3.04 2.46 5.5 5.5 5.5s5.5-2.46 5.5-5.5V6h-1.5z"/></svg> Attach</label>
+            <input type="file" id="fi2" accept=".pdf,.docx,.pptx,.zip,.png,.jpg" onchange="attachFile(this,'pf2-badge','pf2-name')"/>
+            <button class="btn-attach danger" onclick="this.closest('.proj-file').remove()">Remove</button>
+          </div>
+        </div>
+        <div class="proj-file">
+          <div class="proj-file-name">E-Park Energy System</div>
+          <div class="proj-file-desc">Converting rotational kinetic energy from park rides into electrical energy. (2023)</div>
+          <div id="pf3-badge" class="file-badge"><svg style="width:12px;height:12px;fill:var(--green)" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span id="pf3-name"></span></div>
+          <div class="proj-file-actions">
+            <label class="btn-attach primary" for="fi3"><svg style="width:11px;height:11px;fill:#fff" viewBox="0 0 24 24"><path d="M16.5 6v11.5c0 2.21-1.79 4-4 4s-4-1.79-4-4V5c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5v10.5c0 .55-.45 1-1 1s-1-.45-1-1V6H10v9.5c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5V5c0-2.21-1.79-4-4-4S7 2.79 7 5v12.5c0 3.04 2.46 5.5 5.5 5.5s5.5-2.46 5.5-5.5V6h-1.5z"/></svg> Attach</label>
+            <input type="file" id="fi3" accept=".pdf,.docx,.pptx,.zip,.png,.jpg" onchange="attachFile(this,'pf3-badge','pf3-name')"/>
+            <button class="btn-attach danger" onclick="this.closest('.proj-file').remove()">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CERTIFICATIONS -->
+  <div class="sidebar-card">
+    <div class="sidebar-card-head">
+      <div class="sidebar-card-head-left">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+        Certifications
+      </div>
+      <button class="sidebar-add-btn" onclick="openModal('modal-cert')">+ Add</button>
+    </div>
+    <div class="sidebar-card-body">
+      <div id="cert-list">
+        <div class="cert-item"><div>Work System Design<br/><span class="cert-tag">IIT NPTEL</span></div><button class="remove-btn" onclick="this.closest('.cert-item').remove()">✕</button></div>
+        <div class="cert-item"><div>Fundamentals of AI<br/><span class="cert-tag">IIT NPTEL</span></div><button class="remove-btn" onclick="this.closest('.cert-item').remove()">✕</button></div>
+        <div class="cert-item"><div>Product Design and Manufacturing<br/><span class="cert-tag">IIT NPTEL</span></div><button class="remove-btn" onclick="this.closest('.cert-item').remove()">✕</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LANGUAGES -->
+  <div class="sidebar-card">
+    <div class="sidebar-card-head">
+      <div class="sidebar-card-head-left">
+        <svg viewBox="0 0 24 24"><path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/></svg>
+        Languages
+      </div>
+      <button class="sidebar-add-btn" onclick="openModal('modal-lang')">+ Add</button>
+    </div>
+    <div class="sidebar-card-body">
+      <div class="lang-row" id="lang-list">
+        <span class="lang-chip">English <button style="border:none;background:transparent;color:var(--ink3);cursor:pointer;font-size:0.65rem;padding:0 0 0 4px;" onclick="this.closest('.lang-chip').remove()">✕</button></span>
+        <span class="lang-chip">Tamil <button style="border:none;background:transparent;color:var(--ink3);cursor:pointer;font-size:0.65rem;padding:0 0 0 4px;" onclick="this.closest('.lang-chip').remove()">✕</button></span>
+      </div>
+    </div>
+  </div>
+
+  <div id="sidebar-custom-sections"></div>
+
+  <div class="new-section-box" onclick="openCustomSectionModal('sidebar')">
+    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+    <p>Add a new section to sidebar</p>
+  </div>
+
+</aside>
+</div>
+
+<script>
+/* ── STATE ── */
+let editingJobId = null;
+let pfCount = 3;
+let currentCustomTarget = 'main';
+let currentCustomSectionId = null;
+let jobCounter = 2;
+
+/* ── MODAL HELPERS ── */
+function openModal(id){ document.getElementById(id).classList.add('open'); }
+function closeModal(id){ document.getElementById(id).classList.remove('open'); }
+document.querySelectorAll('.modal-overlay').forEach(o => {
+  o.addEventListener('click', e => { if(e.target === o) o.classList.remove('open'); });
+});
+
+/* ── EDIT EXPERIENCE (existing jobs) ── */
+function openEditExp(jobId) {
+  editingJobId = jobId;
+  const title = document.getElementById(jobId+'-title').textContent;
+  const company = document.getElementById(jobId+'-company').textContent;
+  const date = document.getElementById(jobId+'-date').textContent;
+  const bullets = Array.from(document.getElementById(jobId+'-bullets').querySelectorAll('li'))
+    .map(li => li.textContent.trim()).join('\n');
+
+  document.getElementById('ee-title').value = title;
+  document.getElementById('ee-company').value = company;
+  document.getElementById('ee-date').value = date;
+  document.getElementById('ee-bullets').value = bullets;
+  document.getElementById('edit-exp-heading').textContent = 'Edit: ' + title;
+  openModal('modal-edit-exp');
+}
+
+function applyEditExp() {
+  if(!editingJobId) return;
+  const title = document.getElementById('ee-title').value.trim();
+  const company = document.getElementById('ee-company').value.trim();
+  const date = document.getElementById('ee-date').value.trim();
+  const bulletsRaw = document.getElementById('ee-bullets').value;
+
+  if(title) document.getElementById(editingJobId+'-title').textContent = title;
+  if(company) document.getElementById(editingJobId+'-company').innerHTML = company;
+  if(date) document.getElementById(editingJobId+'-date').textContent = date;
+
+  const bulletsEl = document.getElementById(editingJobId+'-bullets');
+  bulletsEl.innerHTML = bulletsRaw.split('\n')
+    .filter(l => l.trim())
+    .map(l => `<li>${l.trim()}</li>`)
+    .join('');
+
+  closeModal('modal-edit-exp');
+  editingJobId = null;
+}
+
+/* ── ADD EXPERIENCE ── */
+function saveExp() {
+  const t = v('exp-title'), c = v('exp-company'), d = v('exp-date'), b = v('exp-bullets');
+  if(!t) return;
+  jobCounter++;
+  const jid = 'j' + jobCounter;
+  const bullets = b.split('\n').filter(x=>x.trim()).map(x=>`<li>${x.trim()}</li>`).join('');
+  const html = `<div class="job" data-jobid="${jid}">
+    <div class="job-header">
+      <div>
+        <div class="job-title" id="${jid}-title">${t}</div>
+        <div class="job-company" id="${jid}-company">${c}</div>
+      </div>
+      <span class="job-date" id="${jid}-date">${d}</span>
+    </div>
+    <ul class="job-bullets" id="${jid}-bullets">${bullets}</ul>
+    <div class="job-actions">
+      <button class="job-btn" onclick="openEditExp('${jid}')">
+        <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+        Edit
+      </button>
+      <button class="job-btn danger" onclick="this.closest('.job').remove()">
+        <svg viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+        Remove
+      </button>
+    </div>
+  </div>`;
+  document.getElementById('exp-list').insertAdjacentHTML('beforeend', html);
+  clearFields(['exp-title','exp-company','exp-date','exp-bullets']);
+  closeModal('modal-exp');
+}
+
+/* ── EDUCATION ── */
+function saveEdu() {
+  const d=v('edu-deg'),s=v('edu-school'),m=v('edu-meta');
+  if(!d) return;
+  const html = `<div class="edu-item">
+    <div class="edu-deg">${d}</div>
+    <div class="edu-school">${s}</div>
+    <div class="edu-meta">${m}</div>
+    <button class="remove-btn" style="margin-top:6px" onclick="this.closest('.edu-item').remove()">✕ Remove</button>
+  </div>`;
+  document.getElementById('edu-list').insertAdjacentHTML('beforeend', html);
+  clearFields(['edu-deg','edu-school','edu-meta']);
+  closeModal('modal-edu');
+}
+
+/* ── SKILLS ── */
+function saveSkill() {
+  const cat=v('skill-cat'),items=v('skill-items'),style=document.getElementById('skill-style').value;
+  if(!cat||!items) return;
+  const safeId = 'sr-'+cat.replace(/\s+/g,'-');
+  const pills = items.split(',').map(s=>`<span class="pill ${style}">${s.trim()}</span>`).join('');
+  const existing = document.getElementById(safeId);
+  if(existing){
+    existing.querySelector('.skill-pills').insertAdjacentHTML('beforeend', pills);
+  } else {
+    const html = `<div class="skill-row" id="${safeId}">
+      <span class="skill-cat">${cat}</span>
+      <div class="skill-pills">${pills}</div>
+      <button class="remove-btn" onclick="this.closest('.skill-row').remove()">✕</button>
+    </div>`;
+    document.getElementById('skills-list').insertAdjacentHTML('beforeend', html);
+  }
+  clearFields(['skill-cat','skill-items']);
+  document.getElementById('skill-style').value = '';
+  closeModal('modal-skill');
+}
+
+/* ── ACHIEVEMENTS ── */
+function saveAch() {
+  const t=v('ach-text'); if(!t) return;
+  const li = document.createElement('li');
+  li.innerHTML = `${t} <button class="remove-btn" onclick="this.closest('li').remove()">✕</button>`;
+  document.getElementById('ach-list').appendChild(li);
+  clearFields(['ach-text']);
+  closeModal('modal-ach');
+}
+
+/* ── CERTIFICATIONS ── */
+function saveCert() {
+  const n=v('cert-name'),i=v('cert-issuer'); if(!n) return;
+  const html = `<div class="cert-item">
+    <div>${n}${i?`<br/><span class="cert-tag">${i}</span>`:''}</div>
+    <button class="remove-btn" onclick="this.closest('.cert-item').remove()">✕</button>
+  </div>`;
+  document.getElementById('cert-list').insertAdjacentHTML('beforeend', html);
+  clearFields(['cert-name','cert-issuer']);
+  closeModal('modal-cert');
+}
+
+/* ── LANGUAGES ── */
+function saveLang() {
+  const n=v('lang-name'),l=v('lang-level'); if(!n) return;
+  const chip = document.createElement('span');
+  chip.className = 'lang-chip';
+  chip.innerHTML = `${n}${l?` <small style="color:var(--ink3);font-size:0.7rem">(${l})</small>`:''} <button style="border:none;background:transparent;color:var(--ink3);cursor:pointer;font-size:0.65rem;padding:0 0 0 4px;" onclick="this.closest('.lang-chip').remove()">✕</button>`;
+  document.getElementById('lang-list').appendChild(chip);
+  clearFields(['lang-name','lang-level']);
+  closeModal('modal-lang');
+}
+
+/* ── PROJECTS ── */
+function saveProj() {
+  const t=v('proj-title'),d=v('proj-desc'); if(!t) return;
+  pfCount++;
+  const bid='pb'+pfCount, nid='pn'+pfCount, fid='fi'+pfCount;
+  const html = `<div class="proj-file">
+    <div class="proj-file-name">${t}</div>
+    <div class="proj-file-desc">${d}</div>
+    <div id="${bid}" class="file-badge"><svg style="width:12px;height:12px;fill:var(--green)" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span id="${nid}"></span></div>
+    <div class="proj-file-actions">
+      <label class="btn-attach primary" for="${fid}"><svg style="width:11px;height:11px;fill:#fff" viewBox="0 0 24 24"><path d="M16.5 6v11.5c0 2.21-1.79 4-4 4s-4-1.79-4-4V5c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5v10.5c0 .55-.45 1-1 1s-1-.45-1-1V6H10v9.5c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5V5c0-2.21-1.79-4-4-4S7 2.79 7 5v12.5c0 3.04 2.46 5.5 5.5 5.5s5.5-2.46 5.5-5.5V6h-1.5z"/></svg> Attach</label>
+      <input type="file" id="${fid}" accept=".pdf,.docx,.pptx,.zip,.png,.jpg" onchange="attachFile(this,'${bid}','${nid}')"/>
+      <button class="btn-attach danger" onclick="this.closest('.proj-file').remove()">Remove</button>
+    </div>
+  </div>`;
+  document.getElementById('proj-list').insertAdjacentHTML('beforeend', html);
+  clearFields(['proj-title','proj-desc']);
+  closeModal('modal-proj');
+}
+
+/* ── CUSTOM SECTIONS ── */
+function openCustomSectionModal(target){ currentCustomTarget=target; openModal('modal-custom-section'); }
+
+function saveCustomSection() {
+  const title=v('custom-sec-title'); if(!title) return;
+  const secId='cs-'+Date.now();
+  currentCustomSectionId = secId;
+  if(currentCustomTarget==='main'){
+    const html=`<div class="section" id="${secId}">
+      <div class="sec-head">
+        <div class="sec-head-left"><svg class="si" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>${title}</div>
+        <div style="display:flex;gap:6px">
+          <button class="add-btn" onclick="openCustomItemModal('${secId}','${title}')">+ Add</button>
+          <button class="add-btn" style="border-color:#c0392b;color:#c0392b" onclick="document.getElementById('${secId}').remove()">Remove section</button>
+        </div>
+      </div>
+      <div id="${secId}-items" class="ach-list"></div>
+    </div>`;
+    document.getElementById('main-custom-sections').insertAdjacentHTML('beforeend',html);
+  } else {
+    const html=`<div class="sidebar-card" id="${secId}">
+      <div class="sidebar-card-head">
+        <div class="sidebar-card-head-left"><svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>${title}</div>
+        <div style="display:flex;gap:4px">
+          <button class="sidebar-add-btn" onclick="openCustomItemModal('${secId}','${title}')">+ Add</button>
+          <button class="sidebar-add-btn" style="border-color:#e8b4b0;color:#f4a39e;" onclick="document.getElementById('${secId}').remove()">✕</button>
+        </div>
+      </div>
+      <div class="sidebar-card-body"><div id="${secId}-items"></div></div>
+    </div>`;
+    document.getElementById('sidebar-custom-sections').insertAdjacentHTML('beforeend',html);
+  }
+  clearFields(['custom-sec-title']);
+  closeModal('modal-custom-section');
+}
+
+function openCustomItemModal(secId,secTitle){
+  currentCustomSectionId=secId;
+  document.getElementById('custom-item-title').textContent='Add to '+secTitle;
+  openModal('modal-custom-item');
+}
+
+function saveCustomItem(){
+  const n=v('custom-item-name'),d=v('custom-item-detail');
+  if(!n||!currentCustomSectionId) return;
+  const container=document.getElementById(currentCustomSectionId+'-items');
+  if(!container) return;
+  const html=`<div class="custom-item">
+    <div><strong style="font-size:0.86rem;font-weight:500">${n}</strong>${d?`<br/><span style="font-size:0.78rem;color:var(--ink3)">${d}</span>`:''}</div>
+    <button class="remove-btn" onclick="this.closest('.custom-item').remove()">✕</button>
+  </div>`;
+  container.insertAdjacentHTML('beforeend',html);
+  clearFields(['custom-item-name','custom-item-detail']);
+  closeModal('modal-custom-item');
+}
+
+/* ── FILE ATTACH ── */
+function attachFile(input,badgeId,nameId){
+  if(!input.files||!input.files[0]) return;
+  const badge=document.getElementById(badgeId);
+  document.getElementById(nameId).textContent=input.files[0].name;
+  badge.style.display='inline-flex';
+}
+
+/* ── UTILS ── */
+function v(id){ return document.getElementById(id).value.trim(); }
+function clearFields(ids){ ids.forEach(id=>{ const el=document.getElementById(id); if(el) el.value=''; }); }
+</script>
+</body>
+</html>
